@@ -230,6 +230,12 @@ class FlutterWebviewPlugin {
     final res = await _channel.invokeMethod('eval', {'code': code});
     return res;
   }
+  
+  /// Get AllCookies
+  Future<String> getAllCookies(String url) async {
+    final res = await _channel.invokeMethod('getAllCookies', {'url': url});
+    return res;
+  }
 
   /// Close the Webview
   /// Will trigger the [onDestroy] event
